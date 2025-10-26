@@ -1,0 +1,491 @@
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+body.dark .sidebar {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* Scrollbar Styles */
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+/* Desktop: دائماً ظاهرة */
+@media (min-width: 1025px) {
+  .sidebar:not(.open) {
+    transform: translateX(-280px);
+  }
+}
+
+/* Mobile/Tablet: مخفية ما لم تكن مفتوحة */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+    .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Overlay للـ Mobile فقط */
+.overlay {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: block;
+  }
+}
+
+/* Header Section */
+.header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 90%;
+  height: auto;
+  max-width: 180px;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* User Profile Section */
+.userProfile {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.userProfile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.userAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  flex: 1;
+  overflow: hidden;
+}
+
+.userName {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f8fafc !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body.dark .userName {
+  color: #ffffff !important;
+}
+
+.userRole {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badgeDanger {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.badgeInfo {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+/* Navigation */
+.nav {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin-bottom: 0.25rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 0 25px 25px 0;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.navLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.navLink:hover {
+  color: #3b82f6;
+  transform: translateX(4px);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.navLink:hover::before {
+  width: 100%;
+}
+
+.navLink.active {
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.15);
+  font-weight: 600;
+}
+
+.navLink.active::before {
+  width: 100%;
+}
+
+.navIcon {
+  font-size: 1.25rem;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navContent {
+  flex: 1;
+  overflow: hidden;
+}
+
+.navLabel {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navBadge {
+  margin-left: 0.5rem;
+  padding: 0.125rem 0.375rem;
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.navDescription {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  line-height: 1.1;
+  margin-top: 0.125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activeIndicator {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #3b82f6;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Quick Actions */
+.quickActions {
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.quickActionsTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.quickActionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quickActionBtn:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.userInfoFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.userDetails {
+  flex: 1;
+  min-width: 0;
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.logoutButton:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.copyright {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 280px;
+  }
+  
+  .navLink {
+    padding: 1rem 1.5rem;
+  }
+  
+  .navIcon {
+    font-size: 1.2rem;
+  }
+  
+  .navLabel {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100vw;
+  }
+  
+  .header {
+    padding: 1rem;
+  }
+  
+  .userProfile {
+    margin: 0.75rem;
+    padding: 0.75rem;
+  }
+  
+  .quickActions {
+    padding: 0.75rem;
+  }
+}
+
+/* Large Screen Optimization */
+@media (min-width: 1920px) {
+  .sidebar {
+    width: 320px;
+  }
+  
+  .header {
+    padding: 2rem;
+  }
+  
+  .logo {
+    max-width: 225px;
+  }
+  
+  .userProfile {
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .userName {
+    font-size: 1rem;
+  }
+  
+  .userRole {
+    font-size: 0.85rem;
+  }
+  
+  .navLink {
+    padding: 1rem 2rem;
+  }
+  
+  .navLabel {
+    font-size: 1rem;
+  }
+  
+  .navDescription {
+    font-size: 0.8rem;
+  }
+}
+
+/* Animations */
+.navItem:hover .navDescription {
+  opacity: 1;
+}
+
+.userProfile:hover .userRole {
+  color: #3b82f6;
+}
+
+.navLink:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+.quickActionBtn:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Theme Transitions */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}

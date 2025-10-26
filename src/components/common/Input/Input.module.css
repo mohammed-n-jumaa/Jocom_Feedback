@@ -1,0 +1,132 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--light-text-primary);
+}
+
+body.dark .label {
+  color: var(--dark-text-primary);
+}
+
+.required {
+  color: var(--error);
+  margin-left: 0.25rem;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--light-bg-tertiary);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  color: var(--light-text-primary);
+  background-color: var(--light-bg-primary);
+  transition: all var(--transition-base);
+}
+
+body.dark .input {
+  border-color: var(--dark-bg-tertiary);
+  color: var(--dark-text-primary);
+  background-color: var(--dark-bg-secondary);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.input::placeholder {
+  color: var(--light-text-secondary);
+  opacity: 0.6;
+}
+
+body.dark .input::placeholder {
+  color: var(--dark-text-secondary);
+}
+
+.input:disabled {
+  background-color: var(--light-bg-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+body.dark .input:disabled {
+  background-color: var(--dark-bg-primary);
+}
+
+/* With Icons */
+.withIconLeft {
+  padding-left: 3rem;
+}
+
+.withIconRight {
+  padding-right: 3rem;
+}
+
+.iconLeft,
+.iconRight {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-text-secondary);
+  font-size: 1.25rem;
+}
+
+body.dark .iconLeft,
+body.dark .iconRight {
+  color: var(--dark-text-secondary);
+}
+
+.iconLeft {
+  left: 1rem;
+}
+
+.iconRight {
+  right: 1rem;
+}
+
+/* Error State */
+.error {
+  border-color: var(--error);
+}
+
+.error:focus {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.helperText {
+  font-size: var(--text-sm);
+  color: var(--light-text-secondary);
+}
+
+body.dark .helperText {
+  color: var(--dark-text-secondary);
+}
+
+.errorText {
+  color: var(--error);
+}
+
+.hasError .label {
+  color: var(--error);
+}

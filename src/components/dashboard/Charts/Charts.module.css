@@ -1,0 +1,128 @@
+.chartContainer {
+  background: var(--light-bg-primary);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+body.dark .chartContainer {
+  background: var(--dark-bg-secondary);
+}
+
+.chartHeader {
+  margin-bottom: 1.5rem;
+}
+
+.chartTitle {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--light-text-primary);
+  margin: 0;
+}
+
+body.dark .chartTitle {
+  color: var(--dark-text-primary);
+}
+
+.tooltip {
+  background: white;
+  border: 1px solid var(--light-bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  box-shadow: var(--shadow-lg);
+}
+
+body.dark .tooltip {
+  background: var(--dark-bg-tertiary);
+  border-color: var(--dark-bg-primary);
+}
+
+.tooltipLabel {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--light-text-primary);
+  margin: 0 0 0.25rem 0;
+}
+
+body.dark .tooltipLabel {
+  color: var(--dark-text-primary);
+}
+
+.tooltipValue {
+  font-size: var(--text-sm);
+  color: var(--light-text-secondary);
+  margin: 0;
+}
+
+body.dark .tooltipValue {
+  color: var(--dark-text-secondary);
+}
+
+.legendCustom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--light-bg-tertiary);
+}
+
+body.dark .legendCustom {
+  border-top-color: var(--dark-bg-tertiary);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.legendDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--light-text-primary);
+  min-width: 100px;
+}
+
+body.dark .legendLabel {
+  color: var(--dark-text-primary);
+}
+
+.legendValue {
+  font-size: var(--text-sm);
+  color: var(--light-text-secondary);
+  flex: 1;
+}
+
+body.dark .legendValue {
+  color: var(--dark-text-secondary);
+}
+
+.legendCount {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--primary-blue);
+  min-width: 50px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .chartContainer {
+    padding: 1rem;
+  }
+
+  .legendItem {
+    flex-wrap: wrap;
+  }
+
+  .legendLabel {
+    min-width: auto;
+  }
+}

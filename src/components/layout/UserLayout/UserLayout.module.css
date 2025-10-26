@@ -1,0 +1,270 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+  background: #32465b;
+  padding: 15px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  min-height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.headerBrand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  flex: 0 0 auto;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.headerBrand:hover {
+  transform: scale(1.05);
+}
+
+.headerBrand:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.logoImg {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+.headerCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.headerTitle {
+  text-align: center;
+}
+
+.headerTitle h4 {
+  color: white;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 0 0 auto;
+}
+
+.languageToggle {
+  padding: 0.5rem 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  color: white;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.languageToggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* RTL Support */
+body[dir="rtl"] .container {
+  flex-direction: row;
+}
+
+body[dir="rtl"] .headerCenter {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+body[dir="rtl"] .headerTitle {
+  text-align: center;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+}
+
+/* Footer */
+.footer {
+  background: #32465b;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1rem;
+  font-size: var(--text-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+  .header {
+    padding: 10px 0;
+    min-height: 70px;
+  }
+  
+  .container {
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 0 1.5rem;
+  }
+  
+  .headerCenter {
+    position: static;
+    transform: none;
+    order: 2;
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  body[dir="rtl"] .headerCenter {
+    position: static !important;
+    transform: none !important;
+    text-align: center;
+    left: auto !important;
+    right: auto !important;
+  }
+  
+  .headerBrand {
+    order: 1;
+    flex: 0 0 auto;
+  }
+  
+  .headerActions {
+    order: 3;
+    flex: 0 0 auto;
+  }
+  
+  .logoImg {
+    height: 50px;
+  }
+  
+  .headerTitle h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 8px 0;
+    min-height: 60px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .logoImg {
+    height: 40px;
+  }
+  
+  .headerTitle h4 {
+    font-size: 1rem;
+  }
+  
+  body[dir="rtl"] .headerCenter {
+    text-align: center;
+  }
+  
+  body[dir="rtl"] .headerTitle {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 0.75rem;
+  }
+  
+  .headerCenter {
+    order: 1;
+    margin: 0;
+  }
+  
+  .headerBrand {
+    order: 2;
+  }
+  
+  .headerActions {
+    order: 3;
+  }
+  
+  .headerTitle h4 {
+    font-size: 0.9rem;
+  }
+  
+  .languageToggle {
+    padding: 0.375rem 1rem;
+    font-size: var(--text-xs);
+  }
+  
+  body[dir="rtl"] .headerCenter {
+    text-align: center;
+    order: 1;
+  }
+  
+  body[dir="rtl"] .headerTitle {
+    text-align: center;
+  }
+}
+
+/* تحسين للهواتف العمودية */
+@media (max-width: 1080px) and (min-height: 1800px) {
+  body[dir="rtl"] .headerCenter {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    text-align: center;
+  }
+  
+  body[dir="rtl"] .headerTitle {
+    text-align: center;
+  }
+}

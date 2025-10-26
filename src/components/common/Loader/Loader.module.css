@@ -1,0 +1,84 @@
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.fullScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+body.dark .fullScreen {
+  background-color: rgba(30, 41, 59, 0.9);
+}
+
+.spinner {
+  animation: spin 1.5s linear infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+body.dark .spinner {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Sizes */
+.small {
+  width: 3rem;
+  height: 3rem;
+}
+
+.medium {
+  width: 5rem;
+  height: 5rem;
+}
+
+.large {
+  width: 8rem;
+  height: 8rem;
+}
+
+.text {
+  font-size: var(--text-base);
+  color: var(--light-text-secondary);
+  margin: 0;
+  font-weight: 500;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+body.dark .text {
+  color: var(--dark-text-secondary);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Smooth rendering */
+.spinner {
+  will-change: transform;
+  transform-origin: center;
+}

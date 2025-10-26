@@ -1,0 +1,120 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background-color: var(--light-bg-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 100%;
+}
+
+body.dark .modal {
+  background-color: var(--dark-bg-secondary);
+}
+
+/* Sizes */
+.small {
+  max-width: 400px;
+}
+
+.medium {
+  max-width: 600px;
+}
+
+.large {
+  max-width: 800px;
+}
+
+.xlarge {
+  max-width: 1200px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--light-bg-tertiary);
+}
+
+body.dark .header {
+  border-bottom-color: var(--dark-bg-tertiary);
+}
+
+.title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--light-text-primary);
+  margin: 0;
+}
+
+body.dark .title {
+  color: var(--dark-text-primary);
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: transparent;
+  color: var(--light-text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  font-size: 1.5rem;
+}
+
+body.dark .closeButton {
+  color: var(--dark-text-secondary);
+}
+
+.closeButton:hover {
+  background-color: var(--light-bg-tertiary);
+  color: var(--light-text-primary);
+}
+
+body.dark .closeButton:hover {
+  background-color: var(--dark-bg-tertiary);
+  color: var(--dark-text-primary);
+}
+
+/* Content */
+.content {
+  padding: 1.5rem;
+}
+
+/* Scrollbar */
+.modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: var(--light-text-secondary);
+  border-radius: var(--radius-lg);
+}
+
+body.dark .modal::-webkit-scrollbar-thumb {
+  background: var(--dark-text-secondary);
+}

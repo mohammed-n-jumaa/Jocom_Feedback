@@ -1,0 +1,430 @@
+.container {
+  background: var(--light-bg-primary);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+body.dark .container {
+  background: var(--dark-bg-secondary);
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--light-text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+body.dark .title {
+  color: var(--dark-text-primary);
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--light-text-secondary);
+  margin: 0 0 1rem 0;
+}
+
+body.dark .subtitle {
+  color: var(--dark-text-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.emojiTabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--light-bg-tertiary);
+}
+
+body.dark .emojiTabs {
+  border-bottom-color: var(--dark-bg-tertiary);
+}
+
+.emojiTab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  bottom: -2px;
+}
+
+.emojiTab:hover {
+  background: var(--light-bg-secondary);
+}
+
+body.dark .emojiTab:hover {
+  background: var(--dark-bg-primary);
+}
+
+.emojiTab.active {
+  border-bottom-color: var(--primary-blue);
+}
+
+.tabEmoji {
+  font-size: 1.5rem;
+}
+
+.tabInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tabLabel {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--light-text-primary);
+}
+
+body.dark .tabLabel {
+  color: var(--dark-text-primary);
+}
+
+.tabLabelAr {
+  font-size: var(--text-sm);
+  color: var(--light-text-secondary);
+}
+
+body.dark .tabLabelAr {
+  color: var(--dark-text-secondary);
+}
+
+.tabBadge {
+  padding: 0.25rem 0.5rem;
+  background: var(--primary-blue);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.questionsSection {
+  margin-top: 2rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--light-text-primary);
+  margin: 0;
+}
+
+body.dark .sectionTitle {
+  color: var(--dark-text-primary);
+}
+
+.sectionBadge {
+  padding: 0.25rem 0.75rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary-blue);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.questionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.questionCard {
+  background: var(--light-bg-secondary);
+  border: 2px solid var(--light-bg-tertiary);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: all var(--transition-base);
+}
+
+body.dark .questionCard {
+  background: var(--dark-bg-primary);
+  border-color: var(--dark-bg-tertiary);
+}
+
+.questionCard:hover {
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.questionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.questionType {
+  padding: 0.25rem 0.75rem;
+  background: var(--primary-blue);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.questionBadges {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.questionContent {
+  margin-bottom: 1rem;
+}
+
+.questionText {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--light-text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+body.dark .questionText {
+  color: var(--dark-text-primary);
+}
+
+.questionTextAr {
+  font-size: var(--text-sm);
+  color: var(--light-text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+body.dark .questionTextAr {
+  color: var(--dark-text-secondary);
+}
+
+.questionOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.optionsLabel {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--light-text-secondary);
+  width: 100%;
+}
+
+body.dark .optionsLabel {
+  color: var(--dark-text-secondary);
+}
+
+.optionChip {
+  padding: 0.375rem 0.75rem;
+  background: var(--light-bg-primary);
+  border: 1px solid var(--light-bg-tertiary);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--light-text-primary);
+}
+
+body.dark .optionChip {
+  background: var(--dark-bg-secondary);
+  border-color: var(--dark-bg-tertiary);
+  color: var(--dark-text-primary);
+}
+
+.questionFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--light-bg-tertiary);
+}
+
+body.dark .questionFooter {
+  border-top-color: var(--dark-bg-tertiary);
+}
+
+.questionDepartments {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.deptChip {
+  padding: 0.25rem 0.75rem;
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.questionActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionBtn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--light-bg-tertiary);
+  border-radius: var(--radius-md);
+  color: var(--light-text-primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+body.dark .actionBtn {
+  border-color: var(--dark-bg-tertiary);
+  color: var(--dark-text-primary);
+}
+
+.actionBtn:hover {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: white;
+}
+
+.actionBtn.danger:hover {
+  background: var(--error);
+  border-color: var(--error);
+  color: white;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  color: var(--light-text-secondary);
+}
+
+body.dark .emptyState {
+  color: var(--dark-text-secondary);
+}
+
+.emptyState p {
+  margin: 0 0 1rem 0;
+  font-size: var(--text-base);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .emojiTabs {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .emojiTab {
+    border-bottom: 1px solid var(--light-bg-tertiary);
+    border-right: 3px solid transparent;
+  }
+
+  .emojiTab.active {
+    border-bottom-color: var(--light-bg-tertiary);
+    border-right-color: var(--primary-blue);
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .questionFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}/* تحسين خاص لـ Emoji Cards في Questions Manager */
+body.dark [class*="emoji-card"],
+body.dark [class*="rating-card"] {
+  background-color: #1e293b !important;
+  border: 2px solid #475569 !important;
+  color: #ffffff !important;
+}
+
+body.dark [class*="emoji-card"]:hover,
+body.dark [class*="rating-card"]:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark [class*="emoji-card"] h3,
+body.dark [class*="emoji-card"] h4,
+body.dark [class*="emoji-card"] h5,
+body.dark [class*="rating-card"] h3,
+body.dark [class*="rating-card"] h4,
+body.dark [class*="rating-card"] h5 {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+body.dark [class*="emoji-card"] .emoji,
+body.dark [class*="rating-card"] .emoji {
+  font-size: 2.5rem;
+  filter: brightness(1.1) saturate(1.1);
+}
+
+body.dark [class*="emoji-card"] span,
+body.dark [class*="rating-card"] span {
+  color: #e2e8f0 !important;
+}
+
+/* Question Count Badges */
+body.dark [class*="question-count"],
+body.dark [class*="count-badge"] {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* No Questions Message */
+body.dark [class*="no-questions"],
+body.dark .empty-state h3,
+body.dark .empty-state h4 {
+  color: #f1f5f9 !important;
+  font-weight: 600;
+}
+
+body.dark [class*="no-questions"] p,
+body.dark .empty-state p {
+  color: #cbd5e1 !important;
+}

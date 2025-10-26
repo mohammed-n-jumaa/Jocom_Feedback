@@ -1,0 +1,158 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--light-text-primary);
+}
+
+body.dark .label {
+  color: var(--dark-text-primary);
+}
+
+.select {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--light-bg-tertiary);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  color: var(--light-text-primary);
+  background: var(--light-bg-primary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+body.dark .select {
+  border-color: var(--dark-bg-tertiary);
+  color: var(--dark-text-primary);
+  background: var(--dark-bg-secondary);
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: var(--text-sm);
+  color: var(--light-text-primary);
+}
+
+body.dark .checkbox {
+  color: var(--dark-text-primary);
+}
+
+.checkbox input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.optionsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.optionRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.removeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 1.75rem;
+  background: var(--error);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-size: 1.25rem;
+}
+
+.removeBtn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+.rangeConfig {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.error {
+  font-size: var(--text-sm);
+  color: var(--error);
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--light-bg-tertiary);
+}
+
+body.dark .actions {
+  border-top-color: var(--dark-bg-tertiary);
+}
+
+@media (max-width: 768px) {
+  .optionRow {
+    grid-template-columns: 1fr;
+  }
+
+  .removeBtn {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .rangeConfig {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

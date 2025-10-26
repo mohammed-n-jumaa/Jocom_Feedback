@@ -1,0 +1,11 @@
+.pageContainer {
+  min-height: 100vh;
+  background: #07509e;
+  position: relative;
+  overflow: hidden;
+  padding-top: 0;
+}
+
+.pageContainer::before {
+  display: none;
+}
